@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mainActivity">
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.coronavirus.UI.search.SearchFragment"
+        android:label="@string/menu_search"
+        tools:layout="@layout/fragment_pays" >
+        <action
+            android:id="@+id/action_navigation_search_to_detailsFragment"
+            app:destination="@id/detailspays" />
+        <action
+            android:id="@+id/action_navigation_search_to_detailsFragment2"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.coronavirus.UI.details.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/details_pays">
+        <argument
+            android:name="paysId"
+            app:argType="string" />
+    </fragment>
+</navigation>

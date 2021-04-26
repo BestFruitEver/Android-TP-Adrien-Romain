@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="pays"
+    type="com.example.coronavirus.models.Corona.Country" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/detailspays">
+
+        <TextView
+            android:id="@+id/NPays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{Country.name}"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nom du pays" />
+
+        <TextView
+            android:id="@+id/NbCas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NPays"
+            android:text="@{Country.nbcas}"
+            android:textStyle="italic"
+            app:layout_constraintTop_toBottomOf="@+id/NPays"
+            tools:text="Nombre de cas" />
+
+        <TextView
+            android:id="@+id/NbCasactif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/NbCas"
+            android:text="Nombre de cas actifs : @{Country.nbcasactif}"
+            android:textStyle="italic"
+            app:layout_constraintTop_toBottomOf="@+id/NbCas"
+            tools:text="Nombre de cas actif" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
